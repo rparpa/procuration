@@ -112,6 +112,11 @@ class Request
     /**
      * @var string
      */
+    private $aifStreetSubNumber;
+
+    /**
+     * @var string
+     */
     private $aifStreetType;
 
     /**
@@ -376,6 +381,18 @@ class Request
     }
 
     /**
+     * @param string $aifStreetSubNumber
+     *
+     * @return Request
+     */
+    public function setAifStreetSubNumber(string $aifStreetSubNumber): Request
+    {
+        $this->aifStreetSubNumber = $aifStreetSubNumber;
+
+        return $this;
+    }
+
+    /**
      * @param string $aifStreetType
      *
      * @return Request
@@ -487,7 +504,11 @@ class Request
     {
         $data = [
             'topmostSubform[0].Page1[0].Champ_de_texte1[0]' => $this->lastName,
+            'topmostSubform[0].Page2[0].Champ_de_texte1[0]' => $this->lastName,
+            'topmostSubform[0].Page2[0].Champ_de_texte5[0]' => $this->lastName,
             'topmostSubform[0].Page1[0].Champ_de_texte2[0]' => $this->firstName,
+            'topmostSubform[0].Page2[0].Champ_de_texte2[0]' => $this->firstName,
+            'topmostSubform[0].Page2[0].Champ_de_texte6[0]' => $this->firstName,
             'topmostSubform[0].Page1[0].Champ_de_texte3[0]' => $this->streetNumber,
             'topmostSubform[0].Page1[0].Champ_de_texte4[0]' => $this->streetSubNumber,
             'topmostSubform[0].Page1[0].Champ_de_texte5[0]' => $this->streetType,
@@ -502,17 +523,18 @@ class Request
             'topmostSubform[0].Page1[0].Champ_de_texte18[0]' => $this->aifFirstName,
             'topmostSubform[0].Page2[0].Champ_de_texte10[0]' => $this->aifFirstName,
             'topmostSubform[0].Page1[0].Champ_de_texte19[0]' => $this->aifStreetNumber,
+            'topmostSubform[0].Page1[0].Champ_de_texte20[0]' => $this->aifStreetSubNumber,
             'topmostSubform[0].Page1[0].Champ_de_texte21[0]' => $this->aifStreetType,
             'topmostSubform[0].Page1[0].Champ_de_texte22[0]' => $this->aifStreetName,
             'topmostSubform[0].Page1[0].Champ_de_texte23[0]' => $this->aifZipCode,
             'topmostSubform[0].Page1[0].Champ_de_texte24[0]' => $this->aifCity,
             'topmostSubform[0].Page1[0].Date_Heure26[0]' => $this->aifDateOfBirth->format('dmY'),
             'topmostSubform[0].Page1[0].Champ_de_texte8[1]' => $this->email,
-            'topmostSubform[0].Page2[0].Champ_de_texte1[0]' => $this->lastName,
-            'topmostSubform[0].Page2[0].Champ_de_texte2[0]' => $this->firstName,
+
+
             'topmostSubform[0].Page2[0].Groupe_de_boutons_radio3[0]' => $this->reason,
-            'topmostSubform[0].Page2[0].Champ_de_texte5[0]' => $this->lastName,
-            'topmostSubform[0].Page2[0].Champ_de_texte6[0]' => $this->firstName,
+
+
             'topmostSubform[0].Page1[0].Case_à_cocher12[0]' => true,
             'topmostSubform[0].Page2[0].Case_à_cocher8[0]' => true,
             'topmostSubform[0].Page1[0].Groupe_de_boutons_radio11[0]' => $this->electionListType,

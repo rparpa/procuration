@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ma procuration</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+<style type="text/css">
+</style>
+<body>
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Ma procuration</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container theme-showcase" role="main">
+    <form action="/procuration" method="post">
+        <fieldset name="user" class="formPart" id="userFormPart">
+            <h2>Je soussigné</h2>
+            <div class="form-group">
+                <label for="firstName">Prénom</label>
+                <input type="text" name="firstName" id="firstName" class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Nom</label>
+                <input type="text" name="lastName" id="lastName" class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <label for="birthDate">Date de naissance</label>
+                <input type="date" name="birthDate" id="birthDate" class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <label for="autocompleteAddress">Adresse</label>
+                <input type="text" name="autocompleteAddress" id="autocompleteAddress" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="streetNumber">Numéro de voie</label>
+                <input type="text" name="streetNumber" id="streetNumber" class="form-control" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="streetSubNumber">Bis/Ter...</label>
+                <input type="text" name="streetSubNumber" id="streetSubNumber" class="form-control" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="streetType">Type de voie</label>
+                <input type="text" name="streetType" id="streetType" class="form-control" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="streetName">Nom de la voie</label>
+                <input type="text" name="streetName" id="streetName" class="form-control" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="zipCode">Code postal</label>
+                <input type="text" name="zipCode" id="zipCode" class="form-control" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="city">Commune</label>
+                <input type="text" name="city" id="city" class="form-control" disabled>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-lg btn-block procuration-buttons" data-form-next="attorneyInFact">
+                Suivant
+            </button>
+
+        </fieldset>
+
+        <fieldset name="attorneyInFact" class="formPart" id="attorneyInFact">
+            <h2>Donne procuration à</h2>
+            <div class="form-group">
+                <label for="aifFirstName">Prénom</label>
+                <input type="text" name="aifFirstName" id="aifFirstName" class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <label for="aifLastName">Nom</label>
+                <input type="text" name="aifLastName" id="aifLastName" class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <label for="aifBirthDate">Date de naissance</label>
+                <input type="date" name="aifBirthDate" id="aifBirthDate" class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <label for="aifAutocompleteAddress">Adresse</label>
+                <input type="text" name="aifAutocompleteAddress" id="aifAutocompleteAddress" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="aifStreetNumber">Numéro de voie</label>
+                <input type="text" name="aifStreetNumber" id="aifStreetNumber" class="form-control" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="aifStreetSubNumber">Bis/Ter...</label>
+                <input type="text" name="aifStreetSubNumber" id="aifStreetSubNumber" class="form-control" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="aifStreetType">Type de voie</label>
+                <input type="text" name="aifStreetType" id="aifStreetType" class="form-control" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="aifStreetName">Nom de la voie</label>
+                <input type="text" name="aifStreetName" id="aifStreetName" class="form-control" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="aifZipCode">Code postal</label>
+                <input type="text" name="aifZipCode" id="aifZipCode" class="form-control" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="aifCity">Commune</label>
+                <input type="text" name="aifCity" id="aifCity" class="form-control" disabled>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-lg btn-block procuration-buttons" data-form-next="electionList">
+                Suivant
+            </button>
+        </fieldset>
+
+
+        <fieldset name="electionList" class="formPart" id="electionList">
+            <h2>Dans le bureau de vote</h2>
+
+            <div class="form-group">
+                <label for="electionListType">Type de liste</label>
+                <select id="electionListType" name="electionListType" class="form-control">
+                    <option value="1" selected>De la commune</option>
+                    <option value="2">Du consulat</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="voteCity">De la commune de</label>
+                <input type="text" name="voteCity" id="voteCity" class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <label for="voteRegion">Département / Collectivité</label>
+                <input type="text" name="voteRegion" id="voteRegion" class="form-control"/>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-lg btn-block procuration-buttons" data-form-next="electionList">
+                Suivant
+            </button>
+
+        </fieldset>
+    </form>
+</div> <!-- /container -->
+
+</body>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDspjRTdj7wEghIFm5hKafxXjcpNKP1Uw8&libraries=places"></script>
+<script>
+    (function($){
+        var
+            formParts       = $('.formPart'),
+            voteCityLabel   = $("label[for='voteCity']"),
+            voteRegionLabel = $("label[for='voteRegion']")
+        ;
+
+
+        function setFormValues(formElement, value, streetFormPrefix) {
+            if (formElement == streetFormPrefix + 'Number') {
+                var streetNumber    = value.match(/\d+/);
+                var streetSubNumber = value.match(/[a-zA-Z]+/);
+                document.getElementById(formElement).value = streetNumber ? streetNumber[0] : null;
+                document.getElementById(streetFormPrefix + 'SubNumber').value = streetSubNumber ? streetSubNumber[0] : null;
+            } else if (formElement == streetFormPrefix + 'Name') {
+                var parts = value.split(' ');
+                document.getElementById(streetFormPrefix + 'Type').value = parts[0];
+                parts.splice(0, 1);
+                document.getElementById(formElement).value = parts.join(' ');
+            } else {
+                document.getElementById(formElement).value = value;
+            }
+        }
+
+        function getHandledType(values, componentForm) {
+            for (var type in componentForm) {
+                for (var i = 0; i < values.length; i++) {
+                    if (componentForm[type] == values[i]) {
+                        return type;
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        function initAutocomplete(autocompleteId, prefix) {
+            var autocomplete;
+            var componentForm = {
+                streetNumber: 'street_number',
+                streetName: 'route',
+                city: 'locality',
+                zipCode: 'postal_code',
+                streetType: null,
+                streetSubNumber: null
+            };
+            var streetFormPrefix = 'street';
+
+            if (prefix) {
+                var newComponentForm = {};
+                for (var property in componentForm) {
+                    var newPropertyName = 'aif' + property.charAt(0).toUpperCase() + property.slice(1);
+                    newComponentForm[newPropertyName] = componentForm[property];
+                }
+
+                componentForm    = newComponentForm;
+                streetFormPrefix = 'aifStreet';
+            }
+
+            // Create the autocomplete object, restricting the search to geographical
+            // location types.
+            autocomplete = new google.maps.places.Autocomplete(
+                /** @type {!HTMLInputElement} */(document.getElementById(autocompleteId)),
+                {types: ['geocode']});
+
+            // When the user selects an address from the dropdown, populate the address
+            // fields in the form.
+            autocomplete.addListener('place_changed', function () {
+                // Get the place details from the autocomplete object.
+                var place = autocomplete.getPlace();
+
+                for (var component in componentForm) {
+                    document.getElementById(component).value = '';
+                    document.getElementById(component).disabled = false;
+                }
+
+                // Get each component of the address from the place details
+                // and fill the corresponding field on the form.
+                for (var i = 0; i < place.address_components.length; i++) {
+                    var formElement = null;
+                    if (formElement = getHandledType(place.address_components[i].types, componentForm)) {
+                        setFormValues(formElement, place.address_components[i].long_name, streetFormPrefix);
+                    }
+                }
+            });
+        }
+
+        function toggleFormPart(id) {
+            formParts.hide();
+            $('#' + id).show();
+        }
+
+
+        $('.procuration-buttons').click(function () {
+            toggleFormPart($(this).data('form-next'));
+        });
+
+        $('#electionListType').change(function () {
+            if ($(this).val() == 1) {
+                voteCityLabel.text('De la commune de');
+                voteRegionLabel.text('Du département')
+            } else {
+                voteCityLabel.text('Consulaire de');
+                voteRegionLabel.text('Pays');
+            }
+        });
+
+        toggleFormPart('userFormPart');
+        initAutocomplete('autocompleteAddress');
+        initAutocomplete('aifAutocompleteAddress', 'aif');
+    })($);
+
+</script>
+</html>

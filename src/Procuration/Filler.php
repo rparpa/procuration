@@ -9,7 +9,7 @@ use mikehaertl\pdftk\Pdf;
  * Class ProcurationFiller
  * @package Procuration
  */
-class ProcurationFiller
+class Filler
 {
     public function fill()
     {
